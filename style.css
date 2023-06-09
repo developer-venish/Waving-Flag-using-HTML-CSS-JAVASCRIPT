@@ -1,0 +1,62 @@
+body {
+    background-color: rgb(31, 59, 70);
+  }
+  
+  #container {
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -40%);
+    display: flex;
+  }
+  
+  #pole {
+    width: 10px;
+    height: 500px;
+    border-radius: 50px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: -5px 0 3px inset rgba(255, 255, 255, 0.3)
+  }
+  
+  .flag-unit {
+    width: 5px;
+    height: 5px;
+     background-image: linear-gradient(to bottom right, red, yellow);
+     animation: vertical 1s infinite;
+    box-shadow: 5px 15px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #pole, .column {
+    transform-origin: bottom;
+    animation: sway 5s infinite;
+  }
+  
+  #flag {
+    display: flex;
+  }
+  
+  @keyframes vertical {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+  
+    25% {
+      transform: translate(calc(var(--displacement)*-2), calc(var(--displacement)*-1));
+    }
+  
+    75% {
+      transform: translate(calc(var(--displacement)*3), calc(var(--displacement)*4));
+    }
+  
+  }
+  
+  @keyframes sway {
+    0%, 100% {
+      transform: rotate(-5deg)
+    }
+  
+    50% {
+      transform: rotate(-3deg)
+    }
+  }
+  
